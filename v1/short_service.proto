@@ -1,0 +1,30 @@
+syntax = "proto3";
+package short_service;
+option go_package = "github.com/1tn.pw/protobufs/short_service/v1";
+
+message CreateURLRequest {
+  string url = 1;
+}
+
+message CreateURLResponse {
+  string url = 1;
+  string short_url = 2;
+
+  optional string error = 99;
+}
+
+message GetURLRequest {
+  string short_url = 1;
+}
+
+message GetURLResponse {
+  string url = 1;
+
+  optional string error = 99;
+}
+
+
+service ShortService {
+  rpc CreateURL(CreateURLRequest) returns (CreateURLResponse);
+  rpc GetURL(GetURLRequest) returns (GetURLResponse);
+}
