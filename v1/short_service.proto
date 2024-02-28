@@ -19,6 +19,7 @@ message GetURLRequest {
 
 message GetURLResponse {
   string url = 1;
+  string title = 2;
 
   optional string error = 99;
 }
