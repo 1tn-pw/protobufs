@@ -20,6 +20,8 @@ message GetURLRequest {
 message GetURLResponse {
   string url = 1;
   string title = 2;
+  string favicon = 3;
+  string description = 4;
 
   optional string error = 99;
 }
