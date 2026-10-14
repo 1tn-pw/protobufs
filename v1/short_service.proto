@@ -4,6 +4,9 @@ option go_package = "github.com/1tn.pw/protobufs/short_service/v1";
 
 message CreateURLRequest {
   string url = 1;
+  // title and description, when the caller knows them, are used instead of reading the page
+  optional string title = 2;
+  optional string description = 3;
 }
 
 message CreateURLResponse {
